@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Programs Offered – KMU</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f5f5f5;
+    }
+
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .programs {
+      background-color: #f5f5f5;
+      padding: 60px 0;
+    }
+
+    .programs h2 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    .programs .title-divider {
+      width: 60px;
+      height: 4px;
+      background-color: #0077b6;
+      margin: 10px auto 40px;
+    }
+
+    .program-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 30px;
+    }
+
+    .program {
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .program.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .program img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 15px;
+    }
+
+    .program h5 {
+      color: #0077b6;
+      margin-bottom: 10px;
+      font-size: 1.1rem;
+    }
+
+    .program p {
+      color: #333;
+      font-size: 0.95rem;
+    }
+  </style>
+</head>
+<body>
+
+  <section class="programs">
+    <div class="container">
+      <div style="text-align: center;">
+        <h2>Degree Programs Offered</h2>
+        <div class="title-divider"></div>
+      </div>
+
+      <div class="program-grid">
+
+        <div class="program">
+          <img src="Images/image12.jpg" alt="Cyber Security">
+          <h5>BSc. in Cyber Security</h5>
+          <p>A 4-year degree under the School of Applied Sciences, training students in digital defense, ethical hacking, and network protection.</p>
+        </div>
+
+        <div class="program">
+          <img src="Images/image17.jpg" alt="Data Science">
+          <h5>DS. Data Science</h5>
+          <p>A 4-year degree under the School of Applied Sciences, equipping students with skills in data analysis, machine learning, and statistical modeling.</p>
+        </div>
+
+        <div class="program">
+          <img src="Images/image16.jpg" alt="Business Analysis">
+          <h5>ISBA. Information Systems Business Analysis</h5>
+          <p>A 4-year degree designed to develop skills in analyzing business processes and leveraging IT for strategic decision-making.</p>
+        </div>
+
+        <div class="program">
+          <img src="Images/image13.jpg" alt="Fisheries">
+          <h5>BSc. in Fisheries & Aquaculture</h5>
+          <p>Focuses on aquatic ecosystems and sustainable fisheries management under the School of Applied Sciences.</p>
+        </div>
+
+        <div class="program">
+          <img src="Images/image14.jpg" alt="Sustainable Agriculture">
+          <h5>BSc. in Sustainable Agriculture</h5>
+          <p>A 5-year degree that emphasizes eco-friendly and productive farming systems under the School of Applied Sciences.</p>
+        </div>
+
+        <div class="program">
+          <img src="Images/image15.jpg" alt="Animal Science">
+          <h5>BSc. in Animal Science</h5>
+          <p>This 4-year program explores livestock nutrition, health, and breeding—offered under Agriculture and Aquatic Sciences.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const programs = document.querySelectorAll('.program');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            entry.target.classList.add('visible');
+          }, index * 200);
+        } else {
+          entry.target.classList.remove('visible');
+        }
+      });
+    }, {
+      threshold: 0.2
+    });
+
+    programs.forEach(program => {
+      observer.observe(program);
+    });
+  </script>
+
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>2025 Accepted Applicants</title>
+
+    <style>
+      body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #ffffff;
+        color: #333;
+      }
+
+      .section-header {
+        text-align: center;
+        padding: 40px 20px;
+        background-color: #f1fdf5;
+      }
+
+      .section-header h2 {
+        font-size: 36px;
+        color: #007f3f;
+        font-weight: 700;
+        margin-bottom: 10px;
+      }
+
+      .section-header .divider {
+        width: 80px;
+        height: 4px;
+        background-color: #28a745;
+        margin: 0 auto;
+        border-radius: 2px;
+      }
+
+      .program-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
+        padding: 40px 20px;
+        background-color: #fafafa;
+      }
+
+      .program-box {
+        border-top: 6px solid #28a745;
+        border-bottom: 6px solid #28a745;
+        background-color: #ffffff;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        padding: 25px 20px;
+        width: 300px;
+        flex-shrink: 0;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .program-box:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      }
+
+      .program-box h4 {
+        color: #007f3f;
+        font-weight: 600;
+        margin-bottom: 12px;
+        font-size: 18px;
+      }
+
+      .program-box p {
+        font-size: 14px;
+        color: #555;
+        margin-bottom: 20px;
+        flex-grow: 1;
+      }
+
+      .read-more-btn {
+        background-color: #28a745;
+        color: white;
+        padding: 8px 18px;
+        border-radius: 30px;
+        text-decoration: none;
+        font-weight: 500;
+        transition: background-color 0.3s ease;
+        display: inline-block;
+      }
+
+      .read-more-btn:hover {
+        background-color: #218838;
+      }
+
+      @media (max-width: 768px) {
+        .program-container {
+          flex-direction: column;
+          align-items: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+
+    <div class="section-header">
+      <h2>2025 Academic Year Accepted Applicants</h2>
+      <div class="divider"></div>
+    </div>
+
+    <div class="program-container">
+
+      <div class="program-box">
+        <h4>Accepted Cyber Security Applicants</h4>
+        <p>Congratulations on your acceptance to the BSc. in Cyber Security program — a future of digital defense awaits!</p>
+        <a href="view - list.html" class="read-more-btn">View list</a>
+
+
+
+
+      </div>
+
+      <div class="program-box">
+        <h4>Accepted Animal Science Applicants</h4>
+        <p>Welcome to the Bachelor of Science in Animal Science — your journey into animal care and research begins now.</p>
+        <a href="view - list.html" class="read-more-btn">View list</a>
+      </div>
+
+      <div class="program-box">
+        <h4>Accepted Data Science Applicants</h4>
+        <p>Data-driven futures start here! Explore the thrilling world of AI, analytics, and machine learning with us.</p>
+        <a href="view - list.html" class="read-more-btn">View list</a>
+      </div>
+
+      <div class="program-box">
+        <h4>Accepted Fisheries & Aquaculture Applicants</h4>
+        <p>Congratulations on your entry into a sustainable aquatic future with the Fisheries & Aquaculture program.</p>
+        <a href="view - list.html" class="read-more-btn">View list</a>
+      </div>
+
+      <div class="program-box">
+        <h4>Accepted Sustainable Agriculture Applicants</h4>
+        <p>You've been selected to lead the green revolution with a degree in Sustainable Agriculture. Welcome aboard!</p>
+        <a href="view - list.html" class="read-more-btn">View list</a>
+      </div>
+
+      <div class="program-box">
+        <h4>Accepted Information Systems Business Analysis Applicants</h4>
+        <p>Accepted into ISBA? Your career at the crossroads of business strategy and technology starts now!</p>
+        <a href="view - list.html" class="read-more-btn">View list</a>
+      </div>
+
+    </div>
+    
+
+  
+<!-- APPLY NOW SECTION-->
+<div style="background-color:#FBF4B5; display: flex; justify-content: center; align-items: center; padding: 1rem 0;">
+  <div class="text-center">
+    <h4 style="color: #002147; font-size: 1.75rem; font-weight: bold; margin-bottom: 1rem;">
+      Online Application Closed
+    </h4>
+    <a
+      href="https://apanel.kmu.ac.zm/start"
+      class="btn btn-lg"
+      style="
+        display: block;
+        margin: 0 auto;
+        background-color: #2DC64F;
+        padding: 1rem 2rem;
+        font-size: 1.25rem;
+        border-radius: 50px;
+        width: max-content;
+      "
+    >
+      Apply Now
+    </a>
+  </div>
+</div>
+
+
+
+
+
+
+ <!-- Summary with inline logo -->
+<footer class="site-footer py-5">
+  <div class="container">
+    <div class="row">
+
+      <div class="col-sm-6 mb-4">
+        <div class="footer-box summary-box d-flex align-items-start">
+          <img src="Images/image11.png" alt="KMU Logo" class="summary-logo me-3">
+          <div>
+            <h5 class="footer-title">Summary</h5>
+            <p class="footer-text">
+              Kapasa Makasa University (KMU) is home to over <strong>640 students</strong> and is focused on providing tools and resources they need to achieve success at every level.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Physical Address -->
+      <div class="col-sm-6 mb-4">
+        <div class="footer-box">
+          <h5 class="footer-title">Physical Address</h5>
+          <p class="footer-text mb-1">
+            Great North Road, Chinsali, Zambia
+          </p>
+          <p class="footer-text mb-1">
+            P.O. Box 480195
+          </p>
+          <p class="footer-text mb-1">
+            ✉️ <a href="mailto:enquiries@kmu.ac.zm">enquiries@kmu.ac.zm</a>
+          </p>
+          <p class="footer-text">
+            📞 +260 960 980 011 | +260 975 093 144
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    background-color: #002147;
+    color: #ffffff;
+  }
+
+  .summary-box {
+    background: rgba(255, 111, 97, 0.1);
+    border-left: 6px solid #ff6f61;
+    padding: 1.5rem;
+    border-radius: 4px;
+  }
+
+  .summary-logo {
+    width: 50px;
+    height: auto;
+    flex-shrink: 0;
+  }
+
+  .footer-box {
+    background: rgba(255, 111, 97, 0.1);
+    border-left: 6px solid #ff6f61;
+    padding: 1.5rem;
+    border-radius: 4px;
+  }
+
+  .footer-title {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+    color: #ff6f61;
+    position: relative;
+  }
+  .footer-title::after {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 3px;
+    background-color: #ff6f61;
+    margin-top: 0.25rem;
+  }
+
+  .footer-text {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #ececec;
+    margin-bottom: 0.5rem;
+  }
+
+  .footer-text a {
+    color: #ffcc00;
+    text-decoration: none;
+  }
+  .footer-text a:hover {
+    text-decoration: underline;
+  }
+
+  @media (max-width: 576px) {
+    .summary-box {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    .summary-logo {
+      margin-bottom: 0.75rem;
+    }
+  }
+</style>
+
+
+
+<footer class="site-footer">
+  <div class="footer-bar"></div>
+  <div class="footer-content">
+    &copy; 2025 Kapasa Makasa University. All rights reserved.
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    position: relative;
+    background-color: #002147;   /* deep navy */
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    font-size: 0.9rem;
+  }
+  /* Vibrant color bar at the top of the footer */
+  .site-footer .footer-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background: linear-gradient(90deg, #ff6f61, #ffcc00, #00bfa6);  
+    /* coral → gold → teal gradient for a vibrant look */
+  }
+  .site-footer .footer-content {
+    position: relative;
+    z-index: 1;  /* sits above the bar */
+  }
+  /* Optional hover on links if you add any in the future */
+  .site-footer a {
+    color: #ffcc00;
+    text-decoration: none;
+  }
+  .site-footer a:hover {
+    text-decoration: underline;
+  }
+</style>
+
+</body>
+</html>

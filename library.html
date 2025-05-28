@@ -1,486 +1,205 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>KMU Library</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>KMU Library Slideshow</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: 'Segoe UI', sans-serif;
-      background: #f8f9fa;
-    }
-    .hero {
-      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('Images/image33.jpg') no-repeat center center/cover;
-      color: white;
-      padding: 100px 0;
-      text-align: center;
-      animation: fadeIn 2s ease-in-out;
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-    .fade-section {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 1s ease, transform 1s ease;
-    }
-    .fade-section.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    .service-card {
-      background: #e9f5ff;
+      margin: 0;
       padding: 20px;
-      border-radius: 10px;
-      margin-bottom: 20px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      font-family: 'Roboto', sans-serif;
+      background-color: #000;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      overflow-y: auto;
     }
-    .service-card h5 {
-      color: #28a745;
-    }
-    .service-card p {
-      color: #555;
-    }
-    .collection-card {
-      margin-bottom: 20px;
-    }
-    .collection-card .card {
-      border: 1px solid #ddd;
-      border-radius: 10px;
-      padding: 20px;
-      text-align: center;
-      background: #fff;
-    }
-    .collection-card .card i {
-      color: #28a745;
-    }
-    .collection-card .card h5 {
-      color: #28a745;
-    }
-    .section-title {
-      font-size: 2rem;
-      color: #28a745;
-      margin-bottom: 30px;
-    }
-    .staff-member img {
-      width: 100px;
-      height: 100px;
+
+    /* Cancel Icon */
+    .cancel-icon {
+      position: fixed;
+      top: 15px;
+      right: 20px;
+      font-size: 28px;
+      color: #fff;
+      background: rgba(29, 23, 23, 0.7);
+      padding: 10px 14px;
       border-radius: 50%;
-      margin-bottom: 15px;
+      cursor: pointer;
+      text-decoration: none;
+      z-index: 1000;
+      transition: background 0.3s;
     }
-    .staff-member h5 {
+
+    .cancel-icon:hover {
+      background: rgba(31, 28, 28, 0.9);
+    }
+
+    /* New container to hold slideshow + arrows side by side */
+    .slideshow-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      max-width: 1100px;
+    }
+
+    .prev, .next {
+      background-color: rgba(10, 9, 9, 0.6);
+      padding: 16px;
+      color: white;
+      font-size: 30px;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: 0.3s;
+      user-select: none;
+    }
+
+    .prev:hover, .next:hover {
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    .slideshow-container {
+      position: relative;
+      width: 100%;
+      height: auto;
+      max-width: 1000px;
+    }
+
+    .slide {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .slide.active {
+      display: flex;
+    }
+
+    .slide img {
+      width: 100%;
+      height: 85vh;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .caption {
       margin-top: 10px;
-      color: #28a745;
-    }
-    .staff-member p {
-      color: #555;
-    }
-    .staff-member {
+      font-size: 18px;
+      background: rgba(0, 0, 0, 0.7);
+      padding: 10px;
+      border-radius: 5px;
+      max-width: 90%;
       text-align: center;
-      margin-bottom: 20px;
+    }
+
+    @media screen and (max-width: 600px) {
+      .caption {
+        font-size: 16px;
+      }
+
+      .prev, .next {
+        font-size: 24px;
+        padding: 12px;
+      }
+
+      .slide img {
+        height: 50vh;
+      }
+
+      .cancel-icon {
+        font-size: 24px;
+        padding: 8px 12px;
+      }
+
+      .slideshow-wrapper {
+        flex-direction: column;
+      }
     }
   </style>
 </head>
 <body>
 
-  <section class="hero">
-    <h1 class="display-4">Kapasa Makasa University Library</h1>
-    <p class="lead">An independent university library offering diverse academic resources since June 2021</p>
-  </section>
+  <!-- Cancel Icon -->
+  <a href="kmu W.html" class="cancel-icon" title="Go to Home">&#10006;</a>
 
-  <div class="container mt-5 p-4 rounded shadow-sm" style="background-color: #ffffff;">
-    <h2 class="section-title">About the Library</h2>
-    <p style="color: #333; font-size: 1.1rem; line-height: 1.7;">
-      <strong style="color: #28a745;">Kapasa Makasa University</strong> is located in Mulakupikwa village along the Great North Road in Chinsali District of Muchinga Province, Zambia. The library started operating in June 2019 as a branch of the Copperbelt University, and since June 2021, it functions independently under the leadership of a dedicated Librarian.
-    </p>
-    <p style="color: #333; font-size: 1.1rem; line-height: 1.7;">
-      It plays a central role in the academic life of the university, offering students, researchers, and the wider community access to essential academic resources within a welcoming and well-equipped environment.
-    </p>
-  </div>
-  
-  <div class="container mt-5 p-4 rounded shadow-sm" style="background-color: #e9f5ff;">
-    <h2 class="section-title">Library Aim and Objectives</h2>
-    <p style="color: #333; font-size: 1.1rem;"><strong style="color: #007bff;">Mission:</strong> To provide information resources aligned with the teaching, learning, research, and community service goals of the University.</p>
-    <p style="color: #333; font-size: 1.1rem;"><strong style="color: #007bff;">Vision:</strong> To be the center of academic activity through relevant and timely information services.</p>
-    <p style="color: #333; font-size: 1.1rem;"><strong style="color: #007bff;">Objective:</strong> To supply high-quality information materials to students and staff.</p>
-  </div>
-  
-  <div class="container mt-5 p-4 rounded shadow-sm" style="background-color: #ffffff;">
-    <h2 class="section-title">Library staff members</h2>
-    <div class="row">
-      <div class="col-md-4 staff-member">
-        <div class="p-3 rounded shadow-sm" style="background-color: #f0fdf4;">
-          <img src="Images/image36.jpg" alt="Naomy Mtanga" style="width: 100%; height: 250px; object-fit: cover; border-radius: 10px 10px 0 0;">
-          <h5>Naomy Mtanga</h5>
-          <p>We wish to welcome all our esteemed library users to utilize the various facilities, services and products available in our library both physically and electronically. Our vibrant team is at your service, so feel free to approach any one of us through various means either in person or remotely - Librarian</p>
-        </div>
+  <!-- Slideshow with arrows side-by-side -->
+  <div class="slideshow-wrapper">
+    <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+
+    <div class="slideshow-container">
+      <div class="slide active">
+        <img src="Images/image40.jpg" alt="Student holding book">
+        <div class="caption">A student holds up a copy of "Becoming" intellectual.</div>
       </div>
-      <div class="col-md-4 staff-member">
-        <div class="p-3 rounded shadow-sm" style="background-color: #f0fdf4;">
-          <img src="Images/image39.jpg" alt="Oliver Nyowani" style="width: 100%; height: 250px; object-fit: cover; border-radius: 10px 10px 0 0;">
-          <h5>Oliver Nyowani</h5>
-          <p>Assistant Librarian: Responsible for managing digital library platforms, clearance and reference services.</p>
-        </div>
+
+      <div class="slide">
+        <img src="Images/image3.jpg" alt="KMU Library interior">
+        <div class="caption">Inside the KMU library main study area.</div>
       </div>
-      <div class="col-md-4 staff-member">
-        <div class="p-3 rounded shadow-sm" style="background-color: #f0fdf4;">
-          <img src="Images/image40.jpg" alt="Jack Hatyoka" style="width: 100%; height: 250px; object-fit: cover; border-radius: 10px 10px 0 0;">
-          <h5>Jack Hatyoka</h5>
-          <p>Library Assistant: Responsible for lending books and research reports for use within and outside the library. He also assists in accessing electronic books.</p>
-        </div>
+
+      <div class="slide">
+        <img src="Images/image4.jpg" alt="KMU Library interior">
+        <div class="caption">Another view of the KMU library main study area.</div>
+      </div>
+
+      <div class="slide">
+        <img src="Images/image5.jpg" alt="KMU Library interior">
+        <div class="caption">Students collaborating inside the KMU library.</div>
+      </div>
+
+      <div class="slide">
+        <img src="Images/image6.jpg" alt="KMU Library interior">
+        <div class="caption">Quiet reading section at KMU library.</div>
+      </div>
+
+      <div class="slide">
+        <img src="Images/image7.jpg" alt="Digital resources corner">
+        <div class="caption">Digital resource center with computer access.</div>
       </div>
     </div>
-  </div>
-  
-  
 
-  <div class="container mt-5 fade-section" id="library-services">
-    <h2 class="section-title">Library Services</h2>
-    <div class="row">
-      <div class="col-md-4 service-card">
-        <h5>1. Outreach Services</h5>
-        <p>KMU Library conducts outreach services to nearby secondary and primary schools during events such as World Book and Copyright Day, International Literacy Day, and other significant celebrations. These initiatives aim to promote literacy, raise awareness about copyright issues, and foster a passion for reading and learning within the community.</p>
-        <div>
-          <i class="fas fa-star" style="color: orange;"></i>
-          <i class="fas fa-star" style="color: red;"></i>
-          <i class="fas fa-star" style="color: orange;"></i>
-        </div>
-      </div>
-  
-      <div class="col-md-4 service-card">
-        <h5>2. Special Collections</h5>
-        <p>KMU Library Special Collections include important resources such as rare books, theses, reports, audiovisual items, and distinctive periodicals. These materials are carefully safeguarded, with controlled access.</p>
-        <div>
-          <i class="fas fa-star" style="color: red;"></i>
-          <i class="fas fa-star" style="color: orange;"></i>
-          <i class="fas fa-star" style="color: red;"></i>
-        </div>
-      </div>
-  
-      <div class="col-md-4 service-card">
-        <h5>3. Internet Access</h5>
-        <p>The Internet access section provides users with access to global digital repositories, databases like Astria Digital Library (ADL), MyLoft, and others for academic research.</p>
-        <div>
-          <i class="fas fa-star" style="color: orange;"></i>
-          <i class="fas fa-star" style="color: red;"></i>
-          <i class="fas fa-star" style="color: orange;"></i>
-        </div>
-      </div>
-  
-      <div class="col-md-4 service-card">
-        <h5>4. Reader Services</h5>
-        <p>KMU Library provides users with quiet, focused study and reading environments, featuring comfortable seating, proper lighting, and a distraction-free atmosphere.</p>
-        <div>
-          <i class="fas fa-star" style="color: red;"></i>
-          <i class="fas fa-star" style="color: orange;"></i>
-          <i class="fas fa-star" style="color: red;"></i>
-        </div>
-      </div>
-  
-      <div class="col-md-4 service-card">
-        <h5>5. Lending Services</h5>
-        <p>Library lending services allow users to borrow materials such as books, research projects, and past examination papers for a set period of time.</p>
-        <div>
-          <i class="fas fa-star" style="color: orange;"></i>
-          <i class="fas fa-star" style="color: red;"></i>
-          <i class="fas fa-star" style="color: orange;"></i>
-        </div>
-      </div>
-  
-      <div class="col-md-4 service-card">
-        <h5>6. Information Literacy</h5>
-        <p>Information literacy services teach students the skills needed to search for, assess, and utilize information, including library tours and familiarization with rules.</p>
-        <div>
-          <i class="fas fa-star" style="color: red;"></i>
-          <i class="fas fa-star" style="color: orange;"></i>
-          <i class="fas fa-star" style="color: red;"></i>
-        </div>
-      </div>
-  
-      <div class="col-md-4 service-card">
-        <h5>7. Children’s Corner</h5>
-        <p>A specially designed area for young readers, offering educational materials and fostering literacy among children through outreach initiatives and school collaborations.</p>
-        <div>
-          <i class="fas fa-star" style="color: orange;"></i>
-          <i class="fas fa-star" style="color: red;"></i>
-          <i class="fas fa-star" style="color: orange;"></i>
-        </div>
-      </div>
-  
-      <div class="col-md-4 service-card">
-        <h5>8. Reference Service</h5>
-        <p>Reference services help users locate materials, answer questions, and provide research support, available in-person and online.</p>
-        <div>
-          <i class="fas fa-star" style="color: red;"></i>
-          <i class="fas fa-star" style="color: orange;"></i>
-          <i class="fas fa-star" style="color: red;"></i>
-        </div>
-      </div>
-    </div>
-  </div>
-  
-
-  <div class="container mt-5">
-    <h2 class="section-title">Library Collections</h2>
-    <div class="row">
-      <div class="col-md-4 collection-card">
-        <div class="card p-4 shadow-sm">
-          <i class="fas fa-book-open fa-3x"></i>
-          <h5>Fiction</h5>
-          <p>A wide range of fictional works across genres, including contemporary, classic, and modern literature.</p>
-        </div>
-      </div>
-      <div class="col-md-4 collection-card">
-        <div class="card p-4 shadow-sm">
-          <i class="fas fa-book fa-3x"></i>
-          <h5>Non-Fiction Books</h5>
-          <p>Books in various disciplines such as science, history, psychology, sociology, and more.</p>
-        </div>
-      </div>
-      <div class="col-md-4 collection-card">
-        <div class="card p-4 shadow-sm">
-          <i class="fas fa-file-alt fa-3x"></i>
-          <h5>Undergraduate Project Reports</h5>
-          <p>A collection of past undergraduate project reports from various disciplines.</p>
-        </div>
-      </div>
-      <div class="col-md-4 collection-card">
-        <div class="card p-4 shadow-sm">
-          <i class="fas fa-child fa-3x"></i>
-          <h5>Children's Literature</h5>
-          <p>Books for young readers, including picture books, early readers, and educational materials.</p>
-        </div>
-      </div>
-      <div class="col-md-4 collection-card">
-        <div class="card p-4 shadow-sm">
-          <i class="fas fa-gem fa-3x"></i>
-          <h5>Special Collections</h5>
-          <p>Rare materials such as manuscripts, theses, government publications, and historical archives.</p>
-        </div>
-      </div>
-      <div class="col-md-4 collection-card">
-        <div class="card p-4 shadow-sm">
-          <i class="fas fa-cloud fa-3x"></i>
-          <h5>Digital Collections</h5>
-          <p>Access to digital resources including e-books, digital archives, online journals, and more.</p>
-        </div>
-      </div>
-    </div>
+    <a class="next" onclick="changeSlide(1)">&#10095;</a>
   </div>
 
-  <div class="container mt-5 mb-5">
-    <h2 class="section-title">Library Operational Schedule</h2>
-    <ul>
-      <li><strong>Monday to Friday:</strong> 08:30 - 22:00hrs</li>
-      <li><strong>Saturday:</strong> 09:00 - 13:00hrs</li>
-      <li><strong>Sunday & Public Holidays:</strong> Closed (Special Notices will be released)</li>
-    </ul>
-  </div>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const fadeSection = document.getElementById("library-services");
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-          }
-        });
-      }, {
-        threshold: 0.1
+    let currentSlide = 0;
+    const slides = document.querySelectorAll(".slide");
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.remove("active");
+        if (i === index) {
+          slide.classList.add("active");
+        }
       });
+    }
 
-      if (fadeSection) {
-        observer.observe(fadeSection);
-      }
-    });
+    function changeSlide(n) {
+      currentSlide += n;
+      if (currentSlide >= slides.length) currentSlide = 0;
+      if (currentSlide < 0) currentSlide = slides.length - 1;
+      showSlide(currentSlide);
+    }
+
+    // Auto slide every 5 seconds
+    setInterval(() => {
+      changeSlide(1);
+    }, 5000);
+
+    // Initial show
+    showSlide(currentSlide);
   </script>
-
-
-
-
-<!-- APPLY NOW SECTION-->
-<div style="background-color:#FBF4B5; display: flex; justify-content: center; align-items: center; padding: 1rem 0;">
-  <div class="text-center">
-    <h4 style="color: #002147; font-size: 1.75rem; font-weight: bold; margin-bottom: 1rem;">
-      Online Application Closed
-    </h4>
-    <a
-      href="https://apanel.kmu.ac.zm/start"
-      class="btn btn-lg"
-      style="
-        display: block;
-        margin: 0 auto;
-        background-color: #2DC64F;
-        padding: 1rem 2rem;
-        font-size: 1.25rem;
-        border-radius: 50px;
-        width: max-content;
-      "
-    >
-      Apply Now
-    </a>
-  </div>
-</div>
-
-
-
-
-
-
- <!-- Summary with inline logo -->
-<footer class="site-footer py-5">
-  <div class="container">
-    <div class="row">
-
-      <div class="col-sm-6 mb-4">
-        <div class="footer-box summary-box d-flex align-items-start">
-          <img src="Images/image11.png" alt="KMU Logo" class="summary-logo me-3">
-          <div>
-            <h5 class="footer-title">Summary</h5>
-            <p class="footer-text">
-              Kapasa Makasa University (KMU) is home to over <strong>640 students</strong> and is focused on providing tools and resources they need to achieve success at every level.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Physical Address -->
-      <div class="col-sm-6 mb-4">
-        <div class="footer-box">
-          <h5 class="footer-title">Physical Address</h5>
-          <p class="footer-text mb-1">
-            Great North Road, Chinsali, Zambia
-          </p>
-          <p class="footer-text mb-1">
-            P.O. Box 480195
-          </p>
-          <p class="footer-text mb-1">
-            ✉️ <a href="mailto:enquiries@kmu.ac.zm">enquiries@kmu.ac.zm</a>
-          </p>
-          <p class="footer-text">
-            📞 +260 960 980 011 | +260 975 093 144
-          </p>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</footer>
-
-<style>
-  .site-footer {
-    background-color: #002147;
-    color: #ffffff;
-  }
-
-  .summary-box {
-    background: rgba(255, 111, 97, 0.1);
-    border-left: 6px solid #ff6f61;
-    padding: 1.5rem;
-    border-radius: 4px;
-  }
-
-  .summary-logo {
-    width: 50px;
-    height: auto;
-    flex-shrink: 0;
-  }
-
-  .footer-box {
-    background: rgba(255, 111, 97, 0.1);
-    border-left: 6px solid #ff6f61;
-    padding: 1.5rem;
-    border-radius: 4px;
-  }
-
-  .footer-title {
-    font-size: 1.25rem;
-    margin-bottom: 0.75rem;
-    color: #ff6f61;
-    position: relative;
-  }
-  .footer-title::after {
-    content: '';
-    display: block;
-    width: 40px;
-    height: 3px;
-    background-color: #ff6f61;
-    margin-top: 0.25rem;
-  }
-
-  .footer-text {
-    font-size: 0.95rem;
-    line-height: 1.6;
-    color: #ececec;
-    margin-bottom: 0.5rem;
-  }
-
-  .footer-text a {
-    color: #ffcc00;
-    text-decoration: none;
-  }
-  .footer-text a:hover {
-    text-decoration: underline;
-  }
-
-  @media (max-width: 576px) {
-    .summary-box {
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-    }
-    .summary-logo {
-      margin-bottom: 0.75rem;
-    }
-  }
-</style>
-
-
-
-<footer class="site-footer">
-  <div class="footer-bar"></div>
-  <div class="footer-content">
-    &copy; 2025 Kapasa Makasa University. All rights reserved.
-  </div>
-</footer>
-
-<style>
-  .site-footer {
-    position: relative;
-    background-color: #002147;   /* deep navy */
-    color: #fff;
-    text-align: center;
-    padding: 1rem 0;
-    font-size: 0.9rem;
-  }
-  /* Vibrant color bar at the top of the footer */
-  .site-footer .footer-bar {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 6px;
-    background: linear-gradient(90deg, #ff6f61, #ffcc00, #00bfa6);  
-    /* coral → gold → teal gradient for a vibrant look */
-  }
-  .site-footer .footer-content {
-    position: relative;
-    z-index: 1;  /* sits above the bar */
-  }
-  /* Optional hover on links if you add any in the future */
-  .site-footer a {
-    color: #ffcc00;
-    text-decoration: none;
-  }
-  .site-footer a:hover {
-    text-decoration: underline;
-  }
-</style>
 
 </body>
 </html>

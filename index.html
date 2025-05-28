@@ -2,515 +2,287 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>KAPASA MAKASA UNIVERSITY</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f4f6f9;
-    }
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Professional Homepage</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-papbVb7rw7h4v8K6Ey/6rK54aDZ2r6TPsRq2GwlEM4Mz+r69hGcJrtrAw+EY0p2HZod/E2XoK+8ujO73/cqkKw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    header {
-      background-color: #002d5f;
-      color: white;
-      padding: 20px 0 60px;
-      text-align: center;
-      position: relative;
-    }
-
-    .logo-container {
-      position: absolute;
-      top: 20px;
-      left: 20px;
-    }
-
-    .logo-container img {
-      height: 60px;
-    }
-
-    /* Centered Role Bar */
-    .role-bar {
-      background-color: #007f1c;
-      display: flex;
-      justify-content: center;
-      gap: 40px;
-      padding: 14px 0;
-    }
-
-    .role-bar a {
-      color: #ffffff;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 16px;
-      padding: 8px 16px;
-      border-radius: 4px;
-      transition: background 0.3s;
-    }
-
-    .role-bar a:hover {
-      background-color: #002d5f;
-    }
-
-    /* Main navigation */
-    .main-nav {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      background-color: #00509e;
-      padding: 20px;
-      gap: 20px;
-    }
-
-    .nav-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: center;
-    }
-
-    .nav-links a {
-      color: white;
-      text-decoration: none;
-      font-weight: 500;
-      padding: 10px 14px;
-      border-radius: 5px;
-      transition: background 0.3s ease;
-    }
-
-    .nav-links a:hover {
-      background-color: #003f7f;
-    }
-
-    .apply-now {
-      background-color: #ff6600;
-      color: white !important;
-      font-weight: bold;
-      border-radius: 4px;
-      padding: 10px 16px;
-      text-decoration: none;
-    }
-
-    .apply-now:hover {
-      background-color: #cc5200;
-    }
-  </style>
 </head>
 <body>
+  <header class="header-container">
+  <img src="Images/image11.png" alt="Logo" class="logo" />
 
-  <!-- Header Section -->
-  <header>
-    <div class="logo-container">
-      <img src="Images/image2.PNG" alt="KMU Logo">
-    </div>
-    <h1>Kapasa Makasa University</h1>
-    <p>Learn To Innovate</p>
-  </header>
+  <nav>
+    <ul class="menu">
+      <li><a href="#staff">Library Staff</a></li>
+      <li><a href="#categories">Categories</a></li>
+      <li><a href="#profile">Profile</a></li>
+      <li><a href="#about">About</a></li>
+      <li class="login-menu">
+        <a href="#">Login ▼</a>
+        <ul class="dropdown">
+          <li><a href="student-login.html">Student</a></li>
+          <li><a href="staff-login.html">Staff</a></li>
+        </ul>
+      </li>
+    </ul>
 
-  <!-- Centered Top Role Links -->
-  <div class="role-bar">
-    <a href="index.html">Main</a>
-    <a href="student.html">Students</a>
-    <a href="staff.html">Staff</a>
-  </div>
+    <!-- Hamburger button for small screens -->
+    <div class="menu-toggle">&#9776;</div>
 
-  <!-- Navigation Links -->
-  <nav class="main-nav">
-    <div class="nav-links">
-      <a href="programs.html">Programs</a>
-      <a href="about.html">About Us</a>
-      <a href="news.html">News</a>
-      <a href="events.html">Events</a>
-      <a href="library.html">Library</a>
-      <a href="contact.html">Contact</a>
-      <a href="challenges.html">KMU Challenges</a>
-      <a href="student-portal.html">Student Portal</a>
-    </div>
-    <a class="apply-now" href="apply.html">Apply Now</a>
+    <!-- Search icon button for mobile -->
+    <button class="search-toggle" aria-label="Toggle search">
+      🔍
+    </button>
   </nav>
 
-
-
-
-
-  <!-- Carousel Banner -->
-<style>
-  .top-carousel {
-    position: relative;
-    overflow: hidden;
-    height: 500px; 
-  }
-  .top-carousel .slide {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    display: none;
-  }
-  .top-carousel .slide.active {
-    display: block;
-  }
-  .slide-img {
-  width: 100%;
-  height: 110%;
-  object-position: top center; 
-}
-
-  .caption {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: #fff;
-    text-align: center;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.6);
-    padding: 1rem 2rem;
-    background: rgba(0,0,0,0.4);
-    border-radius: 8px;
-  }
-  .caption h3 {
-    font-size: 2rem;
-    margin-bottom: 0.5rem;
-  }
-  .caption p {
-    font-size: 1.1rem;
-  }
-  /* The bold color bar at the very bottom of the carousel */
-  .top-carousel::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 8px;
-    background: #ff6f61; /* “popping” coral */
-  }
-</style>
-
-<div class="top-carousel" id="top-carousel">
-  <div class="slide active">
-    <img src="Images/image3.jpg" class="slide-img" alt="Accepted Applicants">
-    <div class="caption">
-      <h3>2025 Accepted Applicants</h3>
-      <p>Admission letters have been <strong>sent</strong> to your emails. Check your inbox!</p>
-    </div>
+  <!-- Search bar outside nav, toggled on mobile -->
+  <div class="search-bar-header">
+    <input type="text" placeholder="Search..." />
+    <button>Go</button>
   </div>
-  <div class="slide">
-    <img src="Images/image34.jpg" class="slide-img" alt="Student Health">
-    <div class="caption">
-      <h3>Student Health</h3>
-      <p>Your well-being is our top priority. Access health services and thrive!</p>
-    </div>
-  </div>
-  <div class="slide">
-    <img src="Images/image30.jpg" class="slide-img" alt="Student News">
-    <div class="caption">
-      <h3>Student News</h3>
-      <p>Catch up on the latest achievements from our vibrant student community.</p>
-    </div>
-  </div>
-  <div class="slide">
-    <img src="Images/image46.png" class="slide-img" alt="Research and Innovation">
-    <div class="caption">
-      <h3>Research & Innovation</h3>
-      <p>Explore cutting‑edge discoveries driving real‑world change at KMU.</p>
-    </div>
-  </div>
-  <div class="slide">
-    <img src="Images/image47.jpg" class="slide-img" alt="MoU with Guangdong Ocean University">
-    <div class="caption">
-      <h3>New MoU Signed</h3>
-      <p>KMU partners with Guangdong Ocean University to advance global collaboration.</p>
-    </div>
-  </div>
-</div>
+</header>
 
+<!-- JavaScript to toggle search bar on mobile -->
 <script>
-  const topCarousel = document.getElementById('top-carousel');
-  const topSlides = topCarousel.querySelectorAll('.slide');
-  let topIndex = 0;
-  let topInterval = setInterval(showNextTopSlide, 5000);
+  document.addEventListener("DOMContentLoaded", function () {
+    const searchToggle = document.querySelector(".search-toggle");
+    const searchBar = document.querySelector(".search-bar-header");
 
-  function showNextTopSlide() {
-    topSlides[topIndex].classList.remove('active');
-    topSlides[topIndex].style.display = 'none';
-    topIndex = (topIndex + 1) % topSlides.length;
-    topSlides[topIndex].classList.add('active');
-    topSlides[topIndex].style.display = 'block';
-  }
-
-  // Initialize first slide
-  topSlides.forEach((slide, i) => {
-    slide.style.display = i === 0 ? 'block' : 'none';
-  });
-
-  // Pause on hover, resume on leave
-  topCarousel.addEventListener('mouseenter', () => clearInterval(topInterval));
-  topCarousel.addEventListener('mouseleave', () => {
-    clearInterval(topInterval);
-    topInterval = setInterval(showNextTopSlide, 5000);
-  });
-</script>
-
-<!-- Animation Style for Welcome Logo -->
-<style>
-  .show-logo {
-    left: 50% !important;
-    transform: translate(-50%, -50%) !important;
-    opacity: 1 !important;
-  }
-</style>
-
-<!-- Script to Trigger Logo Animation on Scroll -->
-<script>
-  const logoContainer = document.getElementById('logo-container');
-  const welcomeImage = document.getElementById('welcome-image');
-
-  window.addEventListener('scroll', () => {
-    const rect = welcomeImage.getBoundingClientRect();
-    const windowHeight = window.innerHeight;
-
-    if (rect.top < windowHeight - 100 && rect.bottom > 100) {
-      logoContainer.classList.add('show-logo');
-    } else {
-      logoContainer.classList.remove('show-logo');
-    }
+    searchToggle.addEventListener("click", () => {
+      searchBar.classList.toggle("active");
+    });
   });
 </script>
 
 
 
-<div class="wrapper">
+<!-- Hero Section -->
+<section class="hero">
+  <div class="hero-content">
+    <h1>Welcome to KMU. LIBRARY</h1>
+    <p>Beyond helping scholars learn, research, and pursue truth, our libraries are dedicated to expanding knowledge and intellectual exploration for everyone.</p>
+    <a href="#about" class="cta-button">Explore KMU libraries</a>
+  </div>
+</section>
 
-  <!-- Welcome Message -->
-  <section class="welcome-section">
-    <h2>Welcome to Kapasa Makasa University</h2>
-    <p>
-      At KMU, we are committed to excellence in teaching, research, and innovation.
-      Join our vibrant community and shape your future with us!
-    </p>
-  </section>
+<script>
+  const menuToggle = document.querySelector('.menu-toggle');
+  const menu = document.querySelector('.menu');
 
-  <!-- Centered Carousel -->
-  <section class="carousel-wrapper">
-    <div class="carousel-container">
-      <div class="carousel-track">
-        <div class="carousel-slide">
-          <img src="Images/image10.png" alt="Hostels">
-          <div class="carousel-caption">KMU hostels: Comfort and convenience</div>
-        </div>
-        <div class="carousel-slide">
-          <img src="Images/image31.jpg" alt="Library">
-          <div class="carousel-caption">KMU Library: Knowledge at your fingertips</div>
-        </div>
-        <div class="carousel-slide">
-          <img src="Images/image5.jpg" alt="Classrooms">
-          <div class="carousel-caption">KMU classrooms: Excellence in learning</div>
-        </div>
+  menuToggle.addEventListener('click', () => {
+    menu.classList.toggle('active');
+  });
+</script>
+
+  <section class="library-section white-section" id="about">
+  <div class="library-container">
+    <h2 style="text-align: center;">ABOUT KAPASA MAKASA UNIVERSITY LIBRARY</h2>
+    <div style="text-align: center; margin: 20px 0;">
+      <em>We champion knowledge to empower academic success and societal growth.</em>
+    </div>
+    <div style="display: flex; flex-wrap: wrap; align-items: flex-start; gap: 30px;">
+      <img src="Images/image37.jpg" alt="Library interior" style="max-width: 40%; height: auto; border-radius: 8px;">
+      <div style="flex: 1;">
+        <p>
+          At <strong>Kapasa Makasa University Library</strong>, we are committed to fostering academic excellence and innovation. Established in 2019 under Copperbelt University and becoming fully independent in 2021, the library is located along the Great North Road in Chinsali District, Muchinga Province.
+        </p>
+        <p>
+          Our mission is to support learning, teaching, and research by providing access to vital academic resources and a welcoming environment. We collaborate with faculty and students to develop skills, promote access to knowledge, and contribute to national and global educational development.
+        </p>
+        <p>
+          With a vision to become a leading center of knowledge, the library embraces technology, inclusivity, and lifelong learning to empower our academic community.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <section class="library-aim-section">
+  <h2 class="section-title">Library Aim and Objectives</h2>
+  <p class="section-subtitle">Explore our purpose and focus for student academic success</p>
+
+  <div class="aim-cards">
+    <div class="aim-card">
+      <div class="icon-area">🎯</div>
+      <div class="text-area">
+        <h4>Mission</h4>
+        <p>To provide information resources that meet the needs of all users in line with teaching, learning, research, training and community service programs in line with the mission and goals of the University.</p>
       </div>
     </div>
 
-  </section>
-
-  <!-- History Section -->
-  <section class="history-section">
-    <h3 class="history-title">History of Kapasa Makasa University</h3>
-    <div class="history-content">
-      <p class="history-text">
-        Kapasa Makasa University (<em>32.222 – 10.606</em>) is located along the Great North Road in Mulakupikwa Village, north of Chinsali.
-        It was initially intended as a police training facility, named <strong>Chinsali Combined Staff Training College</strong>,
-        during Zambia’s First Republic under the Ministry of Home Affairs.
-      </p>
-      <p class="history-text">
-        On <strong>29 July 1996</strong>, Cabinet transferred the facility from the Ministry of Home Affairs to the Ministry of Education.
-        The land covered approximately <strong>200 hectares</strong>. A committee appointed by President Levy Mwanawasa—headed by Prof. Geoffrey Lungwangwa—
-        recommended its development as a centre of excellence in university education for science and technology.
-      </p>
+    <div class="aim-card">
+      <div class="icon-area">✅</div>
+      <div class="text-area">
+        <h4>Vision</h4>
+        <p>To be the centre of all academic activities in the university through the provision of adequate, relevant, timely and accurate information</p>
+      </div>
     </div>
-  </section>
 
-</div>
+    <div class="aim-card">
+      <div class="icon-area">📚</div>
+      <div class="text-area">
+        <h4>Objectives</h4>
+        <p>Kapasa Makasa University Library aims to contribute to the supply of high-quality information materials to it's students and staff.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-<style>
-  /* Reset */
-  *, *::before, *::after {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
 
-  body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    line-height: 1.6;
-    color: #333;
-  }
+<!-- AOS CSS -->
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+<link rel="stylesheet" href="library-schedule.css">
 
-  .wrapper {
-    max-width: 900px;
-    margin: auto;
-    padding: 2rem 1rem;
-  }
+<!-- Library Schedule and Collections Section -->
+<section id="library-schedule" class="library-schedule" data-aos="fade-up" data-aos-duration="1200">
+  <div class="overlay"></div>
+  <div class="container">
+    <h2>Library Schedule and Collections</h2>
+    <div class="box" data-aos="zoom-in" data-aos-delay="300">
+      <h3>Library Collections</h3>
+      <ul>
+        <li>Fiction</li>
+        <li>Non-Fiction Books in various disciplines</li>
+        <li>Undergraduate Project Reports</li>
+        <li>Children's Literature</li>
+        <li>Special Collection</li>
+        <li>Digital Collections</li>
+      </ul>
 
-  /* Welcome */
-  .welcome-section {
-    text-align: center;
-    margin-bottom: 2rem;
-  }
+      <h3>Library Operational Schedule</h3>
+      <ul>
+        <li>Monday to Friday – <strong>08:30 to 22:00hrs</strong></li>
+        <li>Saturday – <strong>09:00 to 13:00hrs</strong></li>
+        <li>Sunday – <strong>Closed</strong></li>
+        <li>Public Holidays – <strong>Closed</strong> – Special Notices will be released</li>
+      </ul>
+    </div>
+  </div>
+</section>
 
-  .welcome-section h2 {
-    font-size: 2rem;
-    color: #002147;
-    margin-bottom: 0.5rem;
-  }
-
-  .welcome-section p {
-    font-size: 1rem;
-    max-width: 700px;
-    margin: auto;
-  }
-
-  /* Carousel */
-  .carousel-wrapper {
-    display: flex;
-    justify-content: center;
-    margin: 2rem 0;
-  }
-
-  .carousel-container {
-    width: 100%;
-    max-width: 100%;
-    aspect-ratio: 16 / 9;
-    overflow: hidden;
-    position: relative;
-    border-radius: 12px;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-  }
-
-  .carousel-track {
-    display: flex;
-    width: 100%;
-    height: 100%;
-    position: relative;
-  }
-
-  .carousel-slide {
-    width: 100%;
-    flex-shrink: 0;
-    position: absolute;
-    opacity: 0;
-    transition: opacity 2s ease-in-out; /* Fading effect */
-  }
-
-  .carousel-slide.active {
-    opacity: 1;
-  }
-
-  .carousel-slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 12px;
-  }
-
-  .carousel-caption {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: rgba(0, 33, 71, 0.7);
-    color: #fff;
-    font-size: 1.2rem;
-    font-weight: 600;
-    padding: 0.6rem 1.2rem;
-    border-radius: 8px;
-    text-align: center;
-    white-space: normal;
-    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
-  }
-
-  /* Smooth transition between images */
-  @keyframes fadeInOut {
-    0%, 100% { opacity: 0; }
-    10%, 30% { opacity: 1; }
-    70%, 90% { opacity: 0; }
-  }
-
-  /* History */
-  .history-section {
-    background: #ffffff;
-    padding: 2rem 1rem;
-    text-align: center;
-  }
-
-  .history-title {
-    font-size: 2rem;
-    color: #002147;
-    margin-bottom: 1rem;
-    border-bottom: 3px solid #0077b6;
-    display: inline-block;
-    padding-bottom: 0.25rem;
-  }
-
-  .history-content {
-    max-width: 800px;
-    margin: auto;
-    text-align: justify;
-    line-height: 1.8;
-    color: #333;
-  }
-
-  .history-text {
-    margin-bottom: 1rem;
-  }
-
-  @media (max-width: 768px) {
-    .carousel-caption {
-      font-size: 1rem;
-      padding: 0.4rem 0.8rem;
-    }
-
-    .welcome-section h2 {
-      font-size: 1.6rem;
-    }
-
-    .history-title {
-      font-size: 1.5rem;
-    }
-  }
-</style>
-
+<!-- AOS JS -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 <script>
-  const slides = document.querySelectorAll('.carousel-slide');
-  let currentSlide = 0;
-  let slideInterval;
-
-  function changeSlide() {
-    slides.forEach((slide, index) => {
-      slide.classList.remove('active');
-      if (index === currentSlide) {
-        slide.classList.add('active');
-      }
-    });
-    currentSlide = (currentSlide + 1) % slides.length;
-  }
-
-  function startSlideShow() {
-    changeSlide();
-    slideInterval = setInterval(changeSlide, 5000);  // Change slide every 5 seconds
-  }
-
-  // Initialize slideshow
-  startSlideShow();
-  
-  // Pause the slideshow on hover
-  const carouselContainer = document.querySelector('.carousel-container');
-  carouselContainer.addEventListener('mouseenter', () => clearInterval(slideInterval));
-  carouselContainer.addEventListener('mouseleave', startSlideShow);
+  AOS.init();
 </script>
 
 
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
 
-<!-- Partners Section -->
+
+<!-- Key Services / Features -->
+<section class="library-section light-blue-section fade-in-section" id="programs">
+  <div class="library-container">
+    <h2 class="section-title">Library Services</h2>
+    <div class="services-grid">
+
+      <div class="service-card">
+        <h4>1. Outreach Services</h4>
+        <p>KMU Library conducts outreach services to nearby secondary and primary schools during events such as World Book and Copyright Day, International Literacy Day, and other significant celebrations. These initiatives aim to promote literacy, raise awareness about copyright issues, and foster a passion for reading and learning within the community...</p>
+      </div>
+
+      <div class="service-card">
+        <h4>2. Special Collections</h4>
+        <p>KMU Library Special Collections include important resources, such as rare books, theses, reports, audiovisual items, and distinctive periodicals such as government publications...</p>
+      </div>
+
+      <div class="service-card">
+        <h4>3. Internet Access</h4>
+        <p>The Internet access section in the library is designed to provide users with access to global digital repositories including subscribed databases like the Astria Digital Library (ADL)...</p>
+      </div>
+
+      <div class="service-card">
+        <h4>4. Reader Services</h4>
+        <p>KMU Library provide users with a quiet, focused study and reading environment, typically featuring comfortable seating, proper lighting...</p>
+      </div>
+
+      <div class="service-card">
+        <h4>5. Lending Services</h4>
+        <p>Library lending services allow users to borrow materials like books, research projects and past examination papers for a certain period of time provided the user is registered...</p>
+      </div>
+
+      <div class="service-card">
+        <h4>6. Information Literacy</h4>
+        <p>Information literacy is aimed at providing students with the key skills needed to effectively search for, assess, and utilize information...</p>
+      </div>
+
+      <div class="service-card">
+        <h4>7. Children’s Corner</h4>
+        <p>The Library’s Children's Corner is a specially designed area aimed at fostering and engaging young readers...</p>
+      </div>
+
+      <div class="service-card">
+        <h4>8. Reference Service</h4>
+        <p>Reference service is the personalized assistance intended to help users find, access, and use information efficiently...</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Fade-in Animation Script -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const faders = document.querySelectorAll(".fade-in-section");
+
+    const appearOptions = {
+      threshold: 0.1,
+      rootMargin: "0px 0px -50px 0px"
+    };
+
+    const appearOnScroll = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("in-view");
+        observer.unobserve(entry.target);
+      });
+    }, appearOptions);
+
+    faders.forEach(fader => {
+      appearOnScroll.observe(fader);
+    });
+  });
+</script>
+
+  <!-- Quick Links -->
+  <section class="library-section white-section">
+    <div class="library-container">
+      <h2>Quick Access</h2>
+      <ul class="library-list">
+        <li><a href="#">Apply Now</a></li>
+        <li><a href="#">Student Portal</a></li>
+        <li><a href="#">Library</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+  </section>
+  
+<section class="kmu-library">
+    <div class="floating-images">
+      <img src="Images/image3.jpg" class="img img1" alt="Library 1">
+      <img src="Images/image4.jpg" class="img img2" alt="Library 2">
+      <img src="Images/image5.jpg" class="img img3" alt="Library 3">
+      <img src="Images/image6.jpg" class="img img4" alt="Library 4">
+      <img src="Images/image7.jpg" class="img img5" alt="Library 5">
+      <img src="Images/image8.jpg" class="img img6" alt="Library 6">
+    </div>
+
+    <div class="content">
+      <h1>Inside KMU Library</h1>
+      <p>Our expert librarians and archivists support students, faculty, and researchers through vast archives and advanced digital tools.</p>
+     <a href="gallery.html" class="gallery-btn">
+  <span>&#128247;</span> View the gallery
+</a>
+
+    </div>
+  </section>
+
+   <!-- Partners Section -->
 <section class="partners-section">
   <div class="container">
 
@@ -697,274 +469,57 @@
   </div>
 </section>
 
-<style>
-  .partners-section {
-    background: #fff;
-    padding: 2rem 1rem;
-  }
-
-  .co-title h2 {
-    font-size: 2rem;
-    color: #002147;
-    margin-bottom: 0.5rem;
-  }
-
-  .co-bar {
-    width: 60px;
-    height: 4px;
-    background: #0077b6;
-    margin: 0 auto;
-  }
-
-  .partners-marquee {
-    overflow: hidden;
-    position: relative;
-    margin-top: 2rem;
-  }
-
-  .partners-track {
-    display: flex;
-    gap: 1rem;
-    width: max-content;
-    animation: scroll-left 40s linear infinite;
-  }
-
-  .partners-marquee:hover .partners-track {
-    animation-play-state: paused;
-  }
-  @keyframes scroll-left {
-  0% {
-    transform: translateX(-50%);
-  }
-  100% {
-    transform: translateX(0%);
-  }
-}
 
 
-  .partner-card {
-    flex: 0 0 250px;
-    background: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    padding: 1rem;
-    height: 230px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-
-  .partner-logo {
-    max-height: 100px;
-    object-fit: contain;
-    margin: 0 auto;
-  }
-
-  .card-header {
-    font-weight: 600;
-    font-size: 0.95rem;
-    margin-bottom: 0.5rem;
-  }
-
-  .partner-card a {
-    text-decoration: none;
-    color: #007bff;
-    display: block;
-    height: 100%;
-  }
-
-  .partner-card a:hover {
-    text-decoration: underline;
-  }
-</style>
-
-
-
-
-
-<!-- APPLY NOW SECTION-->
-<div style="background-color:#FBF4B5; display: flex; justify-content: center; align-items: center; padding: 1rem 0;">
-  <div class="text-center">
-    <h4 style="color: #002147; font-size: 1.75rem; font-weight: bold; margin-bottom: 1rem;">
-      Online Application Closed
-    </h4>
-    <a
-      href="https://apanel.kmu.ac.zm/start"
-      class="btn btn-lg"
-      style="
-        display: block;
-        margin: 0 auto;
-        background-color: #2DC64F;
-        padding: 1rem 2rem;
-        font-size: 1.25rem;
-        border-radius: 50px;
-        width: max-content;
-      "
-    >
-      Apply Now
-    </a>
-  </div>
-</div>
-
-
-
-
-
-
- <!-- Summary with inline logo -->
-<footer class="site-footer py-5">
-  <div class="container">
-    <div class="row">
-
-      <div class="col-sm-6 mb-4">
-        <div class="footer-box summary-box d-flex align-items-start">
-          <img src="Images/image11.png" alt="KMU Logo" class="summary-logo me-3">
-          <div>
-            <h5 class="footer-title">Summary</h5>
-            <p class="footer-text">
-              Kapasa Makasa University (KMU) is home to over <strong>640 students</strong> and is focused on providing tools and resources they need to achieve success at every level.
-            </p>
-          </div>
-        </div>
+  <!-- Footer -->
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <h4>About Us</h4>
+        <ul>
+          <li><a href="#library">About the Library</a></li>
+          <li><a href="#mission">Mission Statement</a></li>
+          <li><a href="#departments">Departments</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+          <li><a href="#goals">Goals & Objectives</a></li>
+        </ul>
       </div>
-
-      <!-- Physical Address -->
-      <div class="col-sm-6 mb-4">
-        <div class="footer-box">
-          <h5 class="footer-title">Physical Address</h5>
-          <p class="footer-text mb-1">
-            Great North Road, Chinsali, Zambia
-          </p>
-          <p class="footer-text mb-1">
-            P.O. Box 480195
-          </p>
-          <p class="footer-text mb-1">
-            ✉️ <a href="mailto:enquiries@kmu.ac.zm">enquiries@kmu.ac.zm</a>
-          </p>
-          <p class="footer-text">
-            📞 +260 960 980 011 | +260 975 093 144
-          </p>
-        </div>
+      <div>
+        <h4>Campus Life</h4>
+        <ul>
+          <li><a href="#extracurricular">Extra Curriculum</a></li>
+          <li><a href="#undergraduate">Undergraduate Students</a></li>
+          <li><a href="#innovation">Innovation</a></li>
+          <li><a href="#short-courses">Short Courses</a></li>
+        </ul>
       </div>
-
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#helsb">HELSB</a></li>
+          <li><a href="#alumni">Alumni</a></li>
+          <li><a href="#map">Map</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Follow Us On</h4>
+        <ul>
+          <li><a href="https://facebook.com">Facebook</a></li>
+          <li><a href="https://instagram.com">Instagram</a></li>
+          <li><a href="https://youtube.com">YouTube</a></li>
+        </ul>
+      </div>
     </div>
-  </div>
-</footer>
+    <center><p>&copy; 2025 Kapasa Makasa University. All rights reserved.</p></center>
+  </footer>
 
-<style>
-  .site-footer {
-    background-color: #002147;
-    color: #ffffff;
-  }
-
-  .summary-box {
-    background: rgba(255, 111, 97, 0.1);
-    border-left: 6px solid #ff6f61;
-    padding: 1.5rem;
-    border-radius: 4px;
-  }
-
-  .summary-logo {
-    width: 50px;
-    height: auto;
-    flex-shrink: 0;
-  }
-
-  .footer-box {
-    background: rgba(255, 111, 97, 0.1);
-    border-left: 6px solid #ff6f61;
-    padding: 1.5rem;
-    border-radius: 4px;
-  }
-
-  .footer-title {
-    font-size: 1.25rem;
-    margin-bottom: 0.75rem;
-    color: #ff6f61;
-    position: relative;
-  }
-  .footer-title::after {
-    content: '';
-    display: block;
-    width: 40px;
-    height: 3px;
-    background-color: #ff6f61;
-    margin-top: 0.25rem;
-  }
-
-  .footer-text {
-    font-size: 0.95rem;
-    line-height: 1.6;
-    color: #ececec;
-    margin-bottom: 0.5rem;
-  }
-
-  .footer-text a {
-    color: #ffcc00;
-    text-decoration: none;
-  }
-  .footer-text a:hover {
-    text-decoration: underline;
-  }
-
-  @media (max-width: 576px) {
-    .summary-box {
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-    }
-    .summary-logo {
-      margin-bottom: 0.75rem;
-    }
-  }
-</style>
-
-
-
-
-
-
-
-<footer class="site-footer">
-  <div class="footer-bar"></div>
-  <div class="footer-content">
-    &copy; 2025 Kapasa Makasa University. All rights reserved.
-  </div>
-</footer>
-
-<style>
-  .site-footer {
-    position: relative;
-    background-color: #002147;   /* deep navy */
-    color: #fff;
-    text-align: center;
-    padding: 1rem 0;
-    font-size: 0.9rem;
-  }
-  /* Vibrant color bar at the top of the footer */
-  .site-footer .footer-bar {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 6px;
-    background: linear-gradient(90deg, #ff6f61, #ffcc00, #00bfa6);  
-    /* coral → gold → teal gradient for a vibrant look */
-  }
-  .site-footer .footer-content {
-    position: relative;
-    z-index: 1;  /* sits above the bar */
-  }
-  /* Optional hover on links if you add any in the future */
-  .site-footer a {
-    color: #ffcc00;
-    text-decoration: none;
-  }
-  .site-footer a:hover {
-    text-decoration: underline;
-  }
-</style>
+  <script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const menu = document.querySelector('.menu');
+    menuToggle.addEventListener('click', () => {
+      menu.classList.toggle('active');
+    });
+  </script>
 
 </body>
 </html>

@@ -1,253 +1,276 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Professional Homepage</title>
+  <title>Kapasa Makasa 1 </title>
   <link rel="stylesheet" href="styles.css" />
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-papbVb7rw7h4v8K6Ey/6rK54aDZ2r6TPsRq2GwlEM4Mz+r69hGcJrtrAw+EY0p2HZod/E2XoK+8ujO73/cqkKw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-papbVb7rw7h4v8K6Ey/6rK54aDZ2r6TPsRq2GwlEM4Mz+r69hGcJrtrAw+EY0p2HZod/E2XoK+8ujO73/cqkKw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 </head>
+
 <body>
   <header class="header-container">
-  <img src="Images/image11.png" alt="Logo" class="logo" />
+    <img src="Images/image11.png" alt="Logo" class="logo" />
 
-  <nav>
-    <ul class="menu">
-      <li><a href="#staff">Library Staff</a></li>
-      <li><a href="#categories">Categories</a></li>
-      <li><a href="#profile">Profile</a></li>
-      <li><a href="#about">About</a></li>
-      <li class="login-menu">
-        <a href="#">Login ▼</a>
-        <ul class="dropdown">
-          <li><a href="student-login.html">Student</a></li>
-          <li><a href="staff-login.html">Staff</a></li>
-        </ul>
-      </li>
-    </ul>
+    <nav>
+      <ul class="menu">
+        <li><a href="#staff">Library Staff</a></li>
+        <li><a href="#categories">Categories</a></li>
+        <li><a href="#profile">Profile</a></li>
+        <li><a href="#about">About</a></li>
+        <li class="login-menu">
+          <a href="#">Login ▼</a>
+          <ul class="dropdown">
+            <li><a href="student-login.html">Student</a></li>
+            <li><a href="staff-login.html">Staff</a></li>
+          </ul>
+        </li>
+      </ul>
 
-    <!-- Hamburger button for small screens -->
-    <div class="menu-toggle">&#9776;</div>
+      <!-- Hamburger button for small screens -->
+      <div class="menu-toggle">&#9776;</div>
 
-    <!-- Search icon button for mobile -->
-    <button class="search-toggle" aria-label="Toggle search">
-      🔍
-    </button>
-  </nav>
+      <!-- Search icon button for mobile -->
+      <button class="search-toggle" aria-label="Toggle search">
+        🔍
+      </button>
+    </nav>
 
-  <!-- Search bar outside nav, toggled on mobile -->
-  <div class="search-bar-header">
-    <input type="text" placeholder="Search..." />
-    <button>Go</button>
-  </div>
-</header>
+    <!-- Search bar outside nav, toggled on mobile -->
+    <div class="search-bar-header">
+      <input type="text" placeholder="Search..." />
+      <button>Go</button>
+    </div>
+  </header>
 
-<!-- JavaScript to toggle search bar on mobile -->
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const searchToggle = document.querySelector(".search-toggle");
-    const searchBar = document.querySelector(".search-bar-header");
+  <!-- JavaScript to toggle search bar on mobile -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const searchToggle = document.querySelector(".search-toggle");
+      const searchBar = document.querySelector(".search-bar-header");
 
-    searchToggle.addEventListener("click", () => {
-      searchBar.classList.toggle("active");
+      searchToggle.addEventListener("click", () => {
+        searchBar.classList.toggle("active");
+      });
     });
-  });
-</script>
+  </script>
 
 
 
-<!-- Hero Section -->
-<section class="hero">
-  <div class="hero-content">
-    <h1>Welcome to KMU. LIBRARY</h1>
-    <p>Beyond helping scholars learn, research, and pursue truth, our libraries are dedicated to expanding knowledge and intellectual exploration for everyone.</p>
-    <a href="#about" class="cta-button">Explore KMU libraries</a>
-  </div>
-</section>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Welcome to KMU. LIBRARY</h1>
+      <p>Beyond helping scholars learn, research, and pursue truth, our libraries are dedicated to expanding knowledge
+        and intellectual exploration for everyone.</p>
+      <a href="#about" class="cta-button">Explore KMU libraries</a>
+    </div>
+  </section>
 
-<script>
-  const menuToggle = document.querySelector('.menu-toggle');
-  const menu = document.querySelector('.menu');
+  <script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const menu = document.querySelector('.menu');
 
-  menuToggle.addEventListener('click', () => {
-    menu.classList.toggle('active');
-  });
-</script>
+    menuToggle.addEventListener('click', () => {
+      menu.classList.toggle('active');
+    });
+  </script>
 
   <section class="library-section white-section" id="about">
-  <div class="library-container">
-    <h2 style="text-align: center;">ABOUT KAPASA MAKASA UNIVERSITY LIBRARY</h2>
-    <div style="text-align: center; margin: 20px 0;">
-      <em>We champion knowledge to empower academic success and societal growth.</em>
-    </div>
-    <div style="display: flex; flex-wrap: wrap; align-items: flex-start; gap: 30px;">
-      <img src="Images/image37.jpg" alt="Library interior" style="max-width: 40%; height: auto; border-radius: 8px;">
-      <div style="flex: 1;">
-        <p>
-          At <strong>Kapasa Makasa University Library</strong>, we are committed to fostering academic excellence and innovation. Established in 2019 under Copperbelt University and becoming fully independent in 2021, the library is located along the Great North Road in Chinsali District, Muchinga Province.
-        </p>
-        <p>
-          Our mission is to support learning, teaching, and research by providing access to vital academic resources and a welcoming environment. We collaborate with faculty and students to develop skills, promote access to knowledge, and contribute to national and global educational development.
-        </p>
-        <p>
-          With a vision to become a leading center of knowledge, the library embraces technology, inclusivity, and lifelong learning to empower our academic community.
-        </p>
+    <div class="library-container">
+      <h2 style="text-align: center;">ABOUT KAPASA MAKASA UNIVERSITY LIBRARY</h2>
+      <div style="text-align: center; margin: 20px 0;">
+        <em>We champion knowledge to empower academic success and societal growth.</em>
+      </div>
+      <div style="display: flex; flex-wrap: wrap; align-items: flex-start; gap: 30px;">
+        <img src="Images/image37.jpg" alt="Library interior" style="max-width: 40%; height: auto; border-radius: 8px;">
+        <div style="flex: 1;">
+          <p>
+            At <strong>Kapasa Makasa University Library</strong>, we are committed to fostering academic excellence and
+            innovation. Established in 2019 under Copperbelt University and becoming fully independent in 2021, the
+            library is located along the Great North Road in Chinsali District, Muchinga Province.
+          </p>
+          <p>
+            Our mission is to support learning, teaching, and research by providing access to vital academic resources
+            and a welcoming environment. We collaborate with faculty and students to develop skills, promote access to
+            knowledge, and contribute to national and global educational development.
+          </p>
+          <p>
+            With a vision to become a leading center of knowledge, the library embraces technology, inclusivity, and
+            lifelong learning to empower our academic community.
+          </p>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
   <section class="library-aim-section">
-  <h2 class="section-title">Library Aim and Objectives</h2>
-  <p class="section-subtitle">Explore our purpose and focus for student academic success</p>
+    <h2 class="section-title">Library Aim and Objectives</h2>
+    <p class="section-subtitle">Explore our purpose and focus for student academic success</p>
 
-  <div class="aim-cards">
-    <div class="aim-card">
-      <div class="icon-area">🎯</div>
-      <div class="text-area">
-        <h4>Mission</h4>
-        <p>To provide information resources that meet the needs of all users in line with teaching, learning, research, training and community service programs in line with the mission and goals of the University.</p>
+    <div class="aim-cards">
+      <div class="aim-card">
+        <div class="icon-area">🎯</div>
+        <div class="text-area">
+          <h4>Mission</h4>
+          <p>To provide information resources that meet the needs of all users in line with teaching, learning,
+            research, training and community service programs in line with the mission and goals of the University.</p>
+        </div>
+      </div>
+
+      <div class="aim-card">
+        <div class="icon-area">✅</div>
+        <div class="text-area">
+          <h4>Vision</h4>
+          <p>To be the centre of all academic activities in the university through the provision of adequate, relevant,
+            timely and accurate information</p>
+        </div>
+      </div>
+
+      <div class="aim-card">
+        <div class="icon-area">📚</div>
+        <div class="text-area">
+          <h4>Objectives</h4>
+          <p>Kapasa Makasa University Library aims to contribute to the supply of high-quality information materials to
+            it's students and staff.</p>
+        </div>
       </div>
     </div>
+  </section>
 
-    <div class="aim-card">
-      <div class="icon-area">✅</div>
-      <div class="text-area">
-        <h4>Vision</h4>
-        <p>To be the centre of all academic activities in the university through the provision of adequate, relevant, timely and accurate information</p>
+
+  <!-- AOS CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="library-schedule.css">
+
+  <!-- Library Schedule and Collections Section -->
+  <section id="library-schedule" class="library-schedule" data-aos="fade-up" data-aos-duration="1200">
+    <div class="overlay"></div>
+    <div class="container">
+      <h2>Library Schedule and Collections</h2>
+      <div class="box" data-aos="zoom-in" data-aos-delay="300">
+        <h3>Library Collections</h3>
+        <ul>
+          <li>Fiction</li>
+          <li>Non-Fiction Books in various disciplines</li>
+          <li>Undergraduate Project Reports</li>
+          <li>Children's Literature</li>
+          <li>Special Collection</li>
+          <li>Digital Collections</li>
+        </ul>
+
+        <h3>Library Operational Schedule</h3>
+        <ul>
+          <li>Monday to Friday – <strong>08:30 to 22:00hrs</strong></li>
+          <li>Saturday – <strong>09:00 to 13:00hrs</strong></li>
+          <li>Sunday – <strong>Closed</strong></li>
+          <li>Public Holidays – <strong>Closed</strong> – Special Notices will be released</li>
+        </ul>
       </div>
     </div>
+  </section>
 
-    <div class="aim-card">
-      <div class="icon-area">📚</div>
-      <div class="text-area">
-        <h4>Objectives</h4>
-        <p>Kapasa Makasa University Library aims to contribute to the supply of high-quality information materials to it's students and staff.</p>
+  <!-- AOS JS -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+
+
+  <!-- Key Services / Features -->
+  <section class="library-section light-blue-section fade-in-section" id="programs">
+    <div class="library-container">
+      <h2 class="section-title">Library Services</h2>
+      <div class="services-grid">
+
+        <div class="service-card">
+          <h4>1. Outreach Services</h4>
+          <p>KMU Library conducts outreach services to nearby secondary and primary schools during events such as World
+            Book and Copyright Day, International Literacy Day, and other significant celebrations. These initiatives
+            aim to promote literacy, raise awareness about copyright issues, and foster a passion for reading and
+            learning within the community...</p>
+        </div>
+
+        <div class="service-card">
+          <h4>2. Special Collections</h4>
+          <p>KMU Library Special Collections include important resources, such as rare books, theses, reports,
+            audiovisual items, and distinctive periodicals such as government publications...</p>
+        </div>
+
+        <div class="service-card">
+          <h4>3. Internet Access</h4>
+          <p>The Internet access section in the library is designed to provide users with access to global digital
+            repositories including subscribed databases like the Astria Digital Library (ADL)...</p>
+        </div>
+
+        <div class="service-card">
+          <h4>4. Reader Services</h4>
+          <p>KMU Library provide users with a quiet, focused study and reading environment, typically featuring
+            comfortable seating, proper lighting...</p>
+        </div>
+
+        <div class="service-card">
+          <h4>5. Lending Services</h4>
+          <p>Library lending services allow users to borrow materials like books, research projects and past examination
+            papers for a certain period of time provided the user is registered...</p>
+        </div>
+
+        <div class="service-card">
+          <h4>6. Information Literacy</h4>
+          <p>Information literacy is aimed at providing students with the key skills needed to effectively search for,
+            assess, and utilize information...</p>
+        </div>
+
+        <div class="service-card">
+          <h4>7. Children’s Corner</h4>
+          <p>The Library’s Children's Corner is a specially designed area aimed at fostering and engaging young
+            readers...</p>
+        </div>
+
+        <div class="service-card">
+          <h4>8. Reference Service</h4>
+          <p>Reference service is the personalized assistance intended to help users find, access, and use information
+            efficiently...</p>
+        </div>
+
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
+  <!-- Fade-in Animation Script -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const faders = document.querySelectorAll(".fade-in-section");
 
-<!-- AOS CSS -->
-<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
-<link rel="stylesheet" href="library-schedule.css">
+      const appearOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px"
+      };
 
-<!-- Library Schedule and Collections Section -->
-<section id="library-schedule" class="library-schedule" data-aos="fade-up" data-aos-duration="1200">
-  <div class="overlay"></div>
-  <div class="container">
-    <h2>Library Schedule and Collections</h2>
-    <div class="box" data-aos="zoom-in" data-aos-delay="300">
-      <h3>Library Collections</h3>
-      <ul>
-        <li>Fiction</li>
-        <li>Non-Fiction Books in various disciplines</li>
-        <li>Undergraduate Project Reports</li>
-        <li>Children's Literature</li>
-        <li>Special Collection</li>
-        <li>Digital Collections</li>
-      </ul>
+      const appearOnScroll = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add("in-view");
+          observer.unobserve(entry.target);
+        });
+      }, appearOptions);
 
-      <h3>Library Operational Schedule</h3>
-      <ul>
-        <li>Monday to Friday – <strong>08:30 to 22:00hrs</strong></li>
-        <li>Saturday – <strong>09:00 to 13:00hrs</strong></li>
-        <li>Sunday – <strong>Closed</strong></li>
-        <li>Public Holidays – <strong>Closed</strong> – Special Notices will be released</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<!-- AOS JS -->
-<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-<script>
-  AOS.init();
-</script>
-
-
-<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-<script>
-  AOS.init();
-</script>
-
-
-<!-- Key Services / Features -->
-<section class="library-section light-blue-section fade-in-section" id="programs">
-  <div class="library-container">
-    <h2 class="section-title">Library Services</h2>
-    <div class="services-grid">
-
-      <div class="service-card">
-        <h4>1. Outreach Services</h4>
-        <p>KMU Library conducts outreach services to nearby secondary and primary schools during events such as World Book and Copyright Day, International Literacy Day, and other significant celebrations. These initiatives aim to promote literacy, raise awareness about copyright issues, and foster a passion for reading and learning within the community...</p>
-      </div>
-
-      <div class="service-card">
-        <h4>2. Special Collections</h4>
-        <p>KMU Library Special Collections include important resources, such as rare books, theses, reports, audiovisual items, and distinctive periodicals such as government publications...</p>
-      </div>
-
-      <div class="service-card">
-        <h4>3. Internet Access</h4>
-        <p>The Internet access section in the library is designed to provide users with access to global digital repositories including subscribed databases like the Astria Digital Library (ADL)...</p>
-      </div>
-
-      <div class="service-card">
-        <h4>4. Reader Services</h4>
-        <p>KMU Library provide users with a quiet, focused study and reading environment, typically featuring comfortable seating, proper lighting...</p>
-      </div>
-
-      <div class="service-card">
-        <h4>5. Lending Services</h4>
-        <p>Library lending services allow users to borrow materials like books, research projects and past examination papers for a certain period of time provided the user is registered...</p>
-      </div>
-
-      <div class="service-card">
-        <h4>6. Information Literacy</h4>
-        <p>Information literacy is aimed at providing students with the key skills needed to effectively search for, assess, and utilize information...</p>
-      </div>
-
-      <div class="service-card">
-        <h4>7. Children’s Corner</h4>
-        <p>The Library’s Children's Corner is a specially designed area aimed at fostering and engaging young readers...</p>
-      </div>
-
-      <div class="service-card">
-        <h4>8. Reference Service</h4>
-        <p>Reference service is the personalized assistance intended to help users find, access, and use information efficiently...</p>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- Fade-in Animation Script -->
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const faders = document.querySelectorAll(".fade-in-section");
-
-    const appearOptions = {
-      threshold: 0.1,
-      rootMargin: "0px 0px -50px 0px"
-    };
-
-    const appearOnScroll = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-        if (!entry.isIntersecting) return;
-        entry.target.classList.add("in-view");
-        observer.unobserve(entry.target);
+      faders.forEach(fader => {
+        appearOnScroll.observe(fader);
       });
-    }, appearOptions);
-
-    faders.forEach(fader => {
-      appearOnScroll.observe(fader);
     });
-  });
-</script>
+  </script>
 
   <!-- Quick Links -->
   <section class="library-section white-section">
@@ -261,8 +284,8 @@
       </ul>
     </div>
   </section>
-  
-<section class="kmu-library">
+
+  <section class="kmu-library">
     <div class="floating-images">
       <img src="Images/image3.jpg" class="img img1" alt="Library 1">
       <img src="Images/image4.jpg" class="img img2" alt="Library 2">
@@ -274,200 +297,205 @@
 
     <div class="content">
       <h1>Inside KMU Library</h1>
-      <p>Our expert librarians and archivists support students, faculty, and researchers through vast archives and advanced digital tools.</p>
-     <a href="gallery.html" class="gallery-btn">
-  <span>&#128247;</span> View the gallery
-</a>
+      <p>Our expert librarians and archivists support students, faculty, and researchers through vast archives and
+        advanced digital tools.</p>
+      <a href="gallery.html" class="gallery-btn">
+        <span>&#128247;</span> View the gallery
+      </a>
 
     </div>
   </section>
 
-   <!-- Partners Section -->
-<section class="partners-section">
-  <div class="container">
+  <!-- Partners Section -->
+  <section class="partners-section">
+    <div class="container">
 
-    <!-- Title -->
-    <div class="co-title text-center mb-4">
-     <center> <h2>Partners</h2></center> 
-      <div class="co-bar mx-auto mt-2"></div>
-    </div>
-    <div class="partners-marquee">
-      <div class="partners-track">
+      <!-- Title -->
+      <div class="co-title text-center mb-4">
+        <center>
+          <h2>Partners</h2>
+        </center>
+        <div class="co-bar mx-auto mt-2"></div>
+      </div>
+      <div class="partners-marquee">
+        <div class="partners-track">
 
-        <!-- Partner 1 -->
-        <div class="partner-card">
-          <a href="https://www.helsb.gov.zm/" target="_blank">
-            <div class="card-header text-center">Higher Education Loans and Scholarships Board</div>
-            <div class="card-body">
-              <img src="Images/image19.jpg" alt="HELSB" class="partner-logo">
-            </div>
-          </a>
-        </div>
+          <!-- Partner 1 -->
+          <div class="partner-card">
+            <a href="https://www.helsb.gov.zm/" target="_blank">
+              <div class="card-header text-center">Higher Education Loans and Scholarships Board</div>
+              <div class="card-body">
+                <img src="Images/image19.jpg" alt="HELSB" class="partner-logo">
+              </div>
+            </a>
+          </div>
 
-        <!-- Partner 2 -->
-        <div class="partner-card">
-          <a href="https://www.teveta.org.zm/" target="_blank">
-            <div class="card-header text-center">Technical Education, Vocational and Entrepreneurship Training Authority</div>
-            <div class="card-body">
-              <img src="Images/image18.png" alt="TEVETA" class="partner-logo">
-            </div>
-          </a>
-        </div>
+          <!-- Partner 2 -->
+          <div class="partner-card">
+            <a href="https://www.teveta.org.zm/" target="_blank">
+              <div class="card-header text-center">Technical Education, Vocational and Entrepreneurship Training
+                Authority</div>
+              <div class="card-body">
+                <img src="Images/image18.png" alt="TEVETA" class="partner-logo">
+              </div>
+            </a>
+          </div>
 
-        <!-- Partner 3 -->
-        <div class="partner-card">
-          <a href="https://www.mohe.gov.zm/" target="_blank">
-            <div class="card-header text-center">Ministry of Higher Education</div>
-            <div class="card-body">
-              <img src="Images/image27.png" alt="Ministry of Higher Education" class="partner-logo">
-            </div>
-          </a>
-        </div>
+          <!-- Partner 3 -->
+          <div class="partner-card">
+            <a href="https://www.mohe.gov.zm/" target="_blank">
+              <div class="card-header text-center">Ministry of Higher Education</div>
+              <div class="card-body">
+                <img src="Images/image27.png" alt="Ministry of Higher Education" class="partner-logo">
+              </div>
+            </a>
+          </div>
 
-        <!-- Partner 4 -->
-        <div class="partner-card">
-          <a href="http://www.hpcz.org.zm/" target="_blank">
-            <div class="card-header text-center">Health Professional Council of Zambia</div>
-            <div class="card-body">
-              <img src="Images/image20.jpg" alt="HPCZ" class="partner-logo">
-            </div>
-          </a>
-        </div>
+          <!-- Partner 4 -->
+          <div class="partner-card">
+            <a href="http://www.hpcz.org.zm/" target="_blank">
+              <div class="card-header text-center">Health Professional Council of Zambia</div>
+              <div class="card-body">
+                <img src="Images/image20.jpg" alt="HPCZ" class="partner-logo">
+              </div>
+            </a>
+          </div>
 
-        <!-- Partner 5 -->
-        <div class="partner-card">
-          <a href="https://www.hea.org.zm/" target="_blank">
-            <div class="card-header text-center">Higher Education Authority</div>
-            <div class="card-body">
-              <img src="Images/image26.jpg" alt="HEA" class="partner-logo">
-            </div>
-          </a>
-        </div>
+          <!-- Partner 5 -->
+          <div class="partner-card">
+            <a href="https://www.hea.org.zm/" target="_blank">
+              <div class="card-header text-center">Higher Education Authority</div>
+              <div class="card-body">
+                <img src="Images/image26.jpg" alt="HEA" class="partner-logo">
+              </div>
+            </a>
+          </div>
 
-        <!-- Partner 6 -->
-        <div class="partner-card">
-          <a href="https://www.zaqa.gov.zm/" target="_blank">
-            <div class="card-header text-center">Zambia Qualifications Authority</div>
-            <div class="card-body">
-              <img src="Images/image22.png" alt="ZAQA" class="partner-logo">
-            </div>
-          </a>
-        </div>
+          <!-- Partner 6 -->
+          <div class="partner-card">
+            <a href="https://www.zaqa.gov.zm/" target="_blank">
+              <div class="card-header text-center">Zambia Qualifications Authority</div>
+              <div class="card-body">
+                <img src="Images/image22.png" alt="ZAQA" class="partner-logo">
+              </div>
+            </a>
+          </div>
 
-        <!-- Partner 7 -->
-        <div class="partner-card">
-          <a href="https://zamren.zm/" target="_blank">
-            <div class="card-header text-center">Zambia Research and Education Network</div>
-            <div class="card-body">
-              <img src="Images/image23.png" alt="ZAMREN" class="partner-logo">
-            </div>
-          </a>
-        </div>
+          <!-- Partner 7 -->
+          <div class="partner-card">
+            <a href="https://zamren.zm/" target="_blank">
+              <div class="card-header text-center">Zambia Research and Education Network</div>
+              <div class="card-body">
+                <img src="Images/image23.png" alt="ZAMREN" class="partner-logo">
+              </div>
+            </a>
+          </div>
 
-        <!-- Partner 8 -->
-        <div class="partner-card">
-          <a href="http://www.gnc.org.zm/" target="_blank">
-            <div class="card-header text-center">General Nursing Council of Zambia</div>
-            <div class="card-body">
-              <img src="Images/image24.png" alt="GNC" class="partner-logo">
-            </div>
-          </a>
-        </div>
+          <!-- Partner 8 -->
+          <div class="partner-card">
+            <a href="http://www.gnc.org.zm/" target="_blank">
+              <div class="card-header text-center">General Nursing Council of Zambia</div>
+              <div class="card-body">
+                <img src="Images/image24.png" alt="GNC" class="partner-logo">
+              </div>
+            </a>
+          </div>
 
-        <!-- Partner 9 -->
-        <div class="partner-card">
-          <a href="http://www.zapuc.edu.zm/" target="_blank">
-            <div class="card-header text-center">Zambia Association of Public Universities and Colleges</div>
-            <div class="card-body">
-              <img src="Images/image25.png" alt="ZAPUC" class="partner-logo">
-            </div>
-          </a>
-        </div>
-        <div class="partner-card">
-          <a href="https://www.helsb.gov.zm/" target="_blank">
-            <div class="card-header text-center">Higher Education Loans and Scholarships Board</div>
-            <div class="card-body">
-              <img src="Images/image19.jpg" alt="HELSB" class="partner-logo">
-            </div>
-          </a>
-        </div>
+          <!-- Partner 9 -->
+          <div class="partner-card">
+            <a href="http://www.zapuc.edu.zm/" target="_blank">
+              <div class="card-header text-center">Zambia Association of Public Universities and Colleges</div>
+              <div class="card-body">
+                <img src="Images/image25.png" alt="ZAPUC" class="partner-logo">
+              </div>
+            </a>
+          </div>
+          <div class="partner-card">
+            <a href="https://www.helsb.gov.zm/" target="_blank">
+              <div class="card-header text-center">Higher Education Loans and Scholarships Board</div>
+              <div class="card-body">
+                <img src="Images/image19.jpg" alt="HELSB" class="partner-logo">
+              </div>
+            </a>
+          </div>
 
-        <div class="partner-card">
-          <a href="https://www.teveta.org.zm/" target="_blank">
-            <div class="card-header text-center">Technical Education, Vocational and Entrepreneurship Training Authority</div>
-            <div class="card-body">
-              <img src="Images/image18.png" alt="TEVETA" class="partner-logo">
-            </div>
-          </a>
-        </div>
+          <div class="partner-card">
+            <a href="https://www.teveta.org.zm/" target="_blank">
+              <div class="card-header text-center">Technical Education, Vocational and Entrepreneurship Training
+                Authority</div>
+              <div class="card-body">
+                <img src="Images/image18.png" alt="TEVETA" class="partner-logo">
+              </div>
+            </a>
+          </div>
 
-        <div class="partner-card">
-          <a href="https://www.mohe.gov.zm/" target="_blank">
-            <div class="card-header text-center">Ministry of Higher Education</div>
-            <div class="card-body">
-              <img src="Images/image27.png" alt="Ministry of Higher Education" class="partner-logo">
-            </div>
-          </a>
-        </div>
+          <div class="partner-card">
+            <a href="https://www.mohe.gov.zm/" target="_blank">
+              <div class="card-header text-center">Ministry of Higher Education</div>
+              <div class="card-body">
+                <img src="Images/image27.png" alt="Ministry of Higher Education" class="partner-logo">
+              </div>
+            </a>
+          </div>
 
-        <div class="partner-card">
-          <a href="http://www.hpcz.org.zm/" target="_blank">
-            <div class="card-header text-center">Health Professional Council of Zambia</div>
-            <div class="card-body">
-              <img src="Images/image20.jpg" alt="HPCZ" class="partner-logo">
-            </div>
-          </a>
-        </div>
+          <div class="partner-card">
+            <a href="http://www.hpcz.org.zm/" target="_blank">
+              <div class="card-header text-center">Health Professional Council of Zambia</div>
+              <div class="card-body">
+                <img src="Images/image20.jpg" alt="HPCZ" class="partner-logo">
+              </div>
+            </a>
+          </div>
 
-        <div class="partner-card">
-          <a href="https://www.hea.org.zm/" target="_blank">
-            <div class="card-header text-center">Higher Education Authority</div>
-            <div class="card-body">
-              <img src="Images/image26.jpg" alt="HEA" class="partner-logo">
-            </div>
-          </a>
-        </div>
+          <div class="partner-card">
+            <a href="https://www.hea.org.zm/" target="_blank">
+              <div class="card-header text-center">Higher Education Authority</div>
+              <div class="card-body">
+                <img src="Images/image26.jpg" alt="HEA" class="partner-logo">
+              </div>
+            </a>
+          </div>
 
-        <div class="partner-card">
-          <a href="https://www.zaqa.gov.zm/" target="_blank">
-            <div class="card-header text-center">Zambia Qualifications Authority</div>
-            <div class="card-body">
-              <img src="Images/image22.png" alt="ZAQA" class="partner-logo">
-            </div>
-          </a>
-        </div>
+          <div class="partner-card">
+            <a href="https://www.zaqa.gov.zm/" target="_blank">
+              <div class="card-header text-center">Zambia Qualifications Authority</div>
+              <div class="card-body">
+                <img src="Images/image22.png" alt="ZAQA" class="partner-logo">
+              </div>
+            </a>
+          </div>
 
-        <div class="partner-card">
-          <a href="https://zamren.zm/" target="_blank">
-            <div class="card-header text-center">Zambia Research and Education Network</div>
-            <div class="card-body">
-              <img src="Images/image23.png" alt="ZAMREN" class="partner-logo">
-            </div>
-          </a>
-        </div>
+          <div class="partner-card">
+            <a href="https://zamren.zm/" target="_blank">
+              <div class="card-header text-center">Zambia Research and Education Network</div>
+              <div class="card-body">
+                <img src="Images/image23.png" alt="ZAMREN" class="partner-logo">
+              </div>
+            </a>
+          </div>
 
-        <div class="partner-card">
-          <a href="http://www.gnc.org.zm/" target="_blank">
-            <div class="card-header text-center">General Nursing Council of Zambia</div>
-            <div class="card-body">
-              <img src="Images/image24.png" alt="GNC" class="partner-logo">
-            </div>
-          </a>
-        </div>
+          <div class="partner-card">
+            <a href="http://www.gnc.org.zm/" target="_blank">
+              <div class="card-header text-center">General Nursing Council of Zambia</div>
+              <div class="card-body">
+                <img src="Images/image24.png" alt="GNC" class="partner-logo">
+              </div>
+            </a>
+          </div>
 
-        <div class="partner-card">
-          <a href="http://www.zapuc.edu.zm/" target="_blank">
-            <div class="card-header text-center">Zambia Association of Public Universities and Colleges</div>
-            <div class="card-body">
-              <img src="Images/image25.png" alt="ZAPUC" class="partner-logo">
-            </div>
-          </a>
+          <div class="partner-card">
+            <a href="http://www.zapuc.edu.zm/" target="_blank">
+              <div class="card-header text-center">Zambia Association of Public Universities and Colleges</div>
+              <div class="card-body">
+                <img src="Images/image25.png" alt="ZAPUC" class="partner-logo">
+              </div>
+            </a>
+          </div>
+          <!-- End duplicate -->
         </div>
-        <!-- End duplicate -->
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
 
 
@@ -510,7 +538,9 @@
         </ul>
       </div>
     </div>
-    <center><p>&copy; 2025 Kapasa Makasa University. All rights reserved.</p></center>
+    <center>
+      <p>&copy; 2025 Kapasa Makasa University. All rights reserved.</p>
+    </center>
   </footer>
 
   <script>
@@ -522,4 +552,5 @@
   </script>
 
 </body>
+
 </html>
